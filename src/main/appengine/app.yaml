@@ -1,9 +1,0 @@
-runtime: java11
-env_variables:
-  SPRING_PROFILES_ACTIVE: "gcp"
-  TOKEN: "OTA5NDI1NTg3OTE4MDk0MzU2.YZEGlA.tsjch_lCZJKqn5yN8_QM4JzXUNs"
-handlers:
-  - url: /.*
-    script:
-manual_scaling:
-  instances: 1
