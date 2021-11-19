@@ -31,6 +31,11 @@ public class HbotdiscordApplication {
 				event.getChannel().sendMessage("pong");
 			}
 		});
+		api.addMessageCreateListener(event->{
+			if(event.getMessageContent().equals("hb/amdtop")){
+				event.getChannel().sendMessage("ИДИ НАХУЙ АМДЩНИК ЕБАНЫЙ");
+			}
+		});
 		return api;
 	}
 }
