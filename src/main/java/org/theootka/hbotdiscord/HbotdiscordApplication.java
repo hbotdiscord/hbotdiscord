@@ -2,6 +2,7 @@ package org.theootka.hbotdiscord;
 
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
+import org.javacord.api.entity.channel.TextChannel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,6 +37,7 @@ public class HbotdiscordApplication {
 				event.getChannel().sendMessage("ИДИ НАХУЙ АМДЩНИК ЕБАНЫЙ");
 			}
 		});
+		api.getTextChannelById("790861544467464232").get().sendMessage("test");
 		return api;
 	}
 }
