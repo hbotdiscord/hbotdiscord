@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: org.theootka.hbotdiscord.HbotdiscordApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.129 s <<< FAILURE! - in org.theootka.hbotdiscord.HbotdiscordApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'discordApi' defined in org.theootka.hbotdiscord.HbotdiscordApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.javacord.api.DiscordApi]: Factory method 'discordApi' threw exception; nested exception is java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: You cannot login without a token!
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.javacord.api.DiscordApi]: Factory method 'discordApi' threw exception; nested exception is java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: You cannot login without a token!
+Caused by: java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: You cannot login without a token!
+Caused by: java.lang.IllegalArgumentException: You cannot login without a token!
+

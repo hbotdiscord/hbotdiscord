@@ -6,6 +6,7 @@ import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.channel.TextChannel;
 import org.javacord.api.entity.message.MessageBuilder;
+import org.javacord.api.entity.message.MessageDecoration;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -17,10 +18,7 @@ import org.springframework.core.env.Environment;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
+import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.util.HashMap;
@@ -64,7 +62,7 @@ public class HbotdiscordApplication {
 			public void run() {
 				try {
 					new MessageBuilder()
-							.append(getNsfw().toString())
+							.append(getNsfw())
 							.send(api.getTextChannelById("790861544467464232").get());
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -72,7 +70,7 @@ public class HbotdiscordApplication {
 			}
 		};
 		ScheduledExecutorService sch = Executors.newSingleThreadScheduledExecutor();
-		sch.scheduleAtFixedRate(task, 0, 5, TimeUnit.MINUTES);
+		sch.scheduleAtFixedRate(task, 0, 30, TimeUnit.MINUTES);
 
 		return api;
 	}
